@@ -65,10 +65,24 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+fos_rest:
+    routing_loader:
+        default_format: json
+        include_format: false
+
 fos_user:
     db_driver: orm
-    firewall_name: main
+    firewall_name: api
     user_class: AppBundle\Entity\User
+
+fos_oauth_server:
+    db_driver: orm
+    client_class: PoweredByMoe\ApiBundle\Entity\Client
+    access_token_class: PoweredByMoe\ApiBundle\Entity\AccessToken
+    refresh_token_class: PoweredByMoe\ApiBundle\Entity\RefreshToken
+    auth_code_class: PoweredByMoe\ApiBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_manager
 
 doctrine_migrations:
     dir_name: "%kernel.root_dir%/DoctrineMigrations"

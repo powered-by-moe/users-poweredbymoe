@@ -1,0 +1,7 @@
+powered_by_moe_api_homepage:
+    type: rest
+    resource: PoweredByMoe\ApiBundle\Controller\DefaultController
+
+#powered_by_moe_api_homepage:
+#    path:     /
+#    defaults: { _controller: PoweredByMoeApiBundle:Default:index }
