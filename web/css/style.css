@@ -1,0 +1,77 @@
+body::before {
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    will-change: transform;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+@media (max-width: 512px)  and (min-resolution: 1.5dppx),
+(max-width: 1024px) and (max-resolution: 1.5dppx) {
+    .login-campaign-head-section {
+        background-image: url('/images/miku.jpg');
+    }
+}
+@media (min-width: 513px)  and (max-width: 1024px) and (min-resolution: 1.5dppx),
+(min-width: 1025px) and (max-width: 2048px) and (max-resolution: 1.5dppx)  {
+    .login-campaign-head-section {
+        background-image: url('/images/miku.jpg');
+    }
+}
+@media (min-width: 1025px) and (min-resolution: 1.5dppx),
+(min-width: 2049px) and (max-resolution: 1.5dppx) {
+    .login-campaign-head-section {
+        background-image: url('/images/miku.jpg');
+    }
+}
+
+.bg-pink {
+    background-color: rgb(255,64,129);
+}
+
+.login-campaign-head-section {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mdl-layout__header,
+.mdl-layout__drawer-button {
+    color:white;
+}
+
+.login-card-wide.mdl-card {
+    width: 512px;
+}
+.login-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('../assets/demos/welcome_card.jpg') center / cover;
+}
+.login-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.login-campaign-head-section,
+.login-campaign-login-section {
+    position: relative;
+}
+
+.login-campaign-head-section {
+    height: 800px;
+    width: auto;
+}
+
+.login-campaign-login-section {
+    background-color: #f3f3f3;
+}
+
+.login-slogan {
+    color: #f3f3f3;
+    font-size: 60px;
+    padding-top: 160px;
+}
