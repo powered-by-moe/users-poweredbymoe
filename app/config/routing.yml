@@ -1,6 +1,6 @@
 powered_by_moe_api:
     resource: "@PoweredByMoeApiBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /api
 
 # import FOSUserBundle routes
 NelmioApiDocBundle:

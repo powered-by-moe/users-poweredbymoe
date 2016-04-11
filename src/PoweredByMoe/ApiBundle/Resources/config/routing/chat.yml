@@ -1,0 +1,22 @@
+chat_index:
+    path: /
+    defaults: { _controller: PoweredByMoeApiBundle:Chat:index }
+
+chat_conversation:
+    path: /{id}
+    defaults: { _controller: PoweredByMoeApiBundle:Chat:conversation }
+    methods:
+      - POST
+      - PUT
+    requirements:
+      id: \d+
+
+chat_new:
+    path: /new
+    defaults: { _controller: PoweredByMoeApiBundle:Chat:newConversation }
+
+
+
+#powered_by_moe_api_homepage:
+#    path:     /
+#    defaults: { _controller: PoweredByMoeApiBundle:Default:index }

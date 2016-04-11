@@ -11,6 +11,12 @@
             "app/AppCache.php"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/powered-by-moe/swagger-ui-bundle.git"
+        }
+    ],
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.8.*",
@@ -26,7 +32,10 @@
         "friendsofsymfony/rest-bundle": "^1.7",
         "jms/serializer-bundle": "^1.1",
         "nelmio/api-doc-bundle": "^2.11",
-        "friendsofsymfony/oauth-server-bundle": "^1.5"
+        "friendsofsymfony/oauth-server-bundle": "^1.5",
+        "activelamp/swagger-ui-bundle": "dev-master",
+        "fr3d/ldap-bundle": "^3.0",
+        "friendsofsymfony/message": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

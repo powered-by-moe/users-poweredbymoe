@@ -17,3 +17,16 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+
+    ldap_driver_host: ~
+    ldap_driver_port: 389
+    ldap_driver_username: ~
+    ldap_driver_password: ~
+    ldap_driver_bind_requires_dn: true
+    ldap_driver_base_dn: ~
+    ldap_driver_account_domain_name: ~
+    ldap_driver_account_domain_name_short: ~
+    ldap_user_base_dn: ~
+    ldap_user_filter: (&(ObjectClass=Person))
+    ldap_user_username_attribute: uid

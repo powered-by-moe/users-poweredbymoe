@@ -57,6 +57,17 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+        # The mappings to import the FOSMessage entities
+        mappings:
+            fos_message:
+                type: annotation
+                dir: %kernel.root_dir%/../vendor/friendsofsymfony/message/src/Driver/Doctrine/ORM/Entity
+                prefix: FOS\Message\Driver\Doctrine\ORM\Entity
+
+        # User your user entity instead of the PersonInterface
+        resolve_target_entities:
+            FOS\Message\Model\PersonInterface: AppBundle\Entity\User
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -66,6 +77,12 @@ swiftmailer:
     spool:     { type: memory }
 
 fos_rest:
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener:
+        enabled: true
+        rules:
+            - { path: '^/', priorities: ['json', 'xml']}
     routing_loader:
         default_format: json
         include_format: false
@@ -106,3 +123,9 @@ fr3d_ldap:
         usernameAttribute: "%ldap_user_username_attribute%"
         attributes:
             - { ldap_attr: samaccount, user_method: setUsername }
+
+al_swagger_ui:
+    static_resources:
+        resource_dir: app/Resources/swagger-docs
+        resource_list_filename:  api-docs.json
+    resource_list: al_swagger_ui_static_resource_list

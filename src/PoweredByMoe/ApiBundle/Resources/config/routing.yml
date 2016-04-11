@@ -1,6 +1,14 @@
+al_swagger_ui:
+    resource: @ALSwaggerUIBundle/Resources/config/routing.yml
+    prefix: /docs
+
 powered_by_moe_api_homepage:
     type: rest
     resource: PoweredByMoe\ApiBundle\Controller\DefaultController
+
+chat_api:
+    resource: routing/chat.yml
+    prefix: /chat
 
 #powered_by_moe_api_homepage:
 #    path:     /

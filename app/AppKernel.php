@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new \Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new PoweredByMoe\ApiBundle\PoweredByMoeApiBundle(),
             new \FR3D\LdapBundle\FR3DLdapBundle(),
+            new \ActiveLAMP\Bundle\SwaggerUIBundle\ALSwaggerUIBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

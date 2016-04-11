@@ -31,9 +31,9 @@ security:
             pattern: ^/oauth/v2/token
             security: false
         api:
-            pattern: ^/
+            pattern: ^/api
             fos_oauth: true
-            stateless: true
+            stateless: false
             anonymous: false
         # disables authentication for assets and the profiler, adapt it according to your needs
 #        dev:
