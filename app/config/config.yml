@@ -82,6 +82,7 @@ fos_rest:
     format_listener:
         enabled: true
         rules:
+            - { path: '^/admin', priorities: ['html', 'xhtml']}
             - { path: '^/', priorities: ['json', 'xml']}
     routing_loader:
         default_format: json
@@ -129,3 +130,11 @@ al_swagger_ui:
         resource_dir: app/Resources/swagger-docs
         resource_list_filename:  api-docs.json
     resource_list: al_swagger_ui_static_resource_list
+
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts: [admin]
