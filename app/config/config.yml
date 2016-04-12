@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator: { fallbacks: [en] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -84,6 +84,7 @@ fos_rest:
         rules:
             - { path: '^/admin', priorities: ['html', 'xhtml']}
             - { path: '^/login', priorities: ['html', 'xhtml']}
+            - { path: '^/profile', priorities: ['html', 'xhtml']}
             - { path: '^/register', priorities: ['html', 'xhtml']}
             - { path: '^/', priorities: ['json', 'xml']}
     routing_loader:
@@ -96,6 +97,10 @@ fos_user:
     user_class: AppBundle\Entity\User
     group:
         group_class: AppBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+    service:
+        user_manager: sonata.user.orm.user_manager
+
 
 fos_oauth_server:
     db_driver: orm
@@ -142,3 +147,8 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
+        sonata.block.service.text:
+        sonata.block.service.rss:
