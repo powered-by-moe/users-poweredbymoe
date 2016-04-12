@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new PoweredByMoe\ApiBundle\PoweredByMoeApiBundle(),
             new \FR3D\LdapBundle\FR3DLdapBundle(),
             new \ActiveLAMP\Bundle\SwaggerUIBundle\ALSwaggerUIBundle(),
+            new PoweredByMoe\SocializeBundle\PoweredByMoeSocializeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

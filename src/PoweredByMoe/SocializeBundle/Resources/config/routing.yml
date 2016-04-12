@@ -1,0 +1,3 @@
+#powered_by_moe_socialize_homepage:
+#    path:     /
+#    defaults: { _controller: PoweredByMoeSocializeBundle:Default:index }

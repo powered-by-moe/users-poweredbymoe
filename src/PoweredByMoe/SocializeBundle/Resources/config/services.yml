@@ -1,0 +1,4 @@
+services:
+#    powered_by_moe_socialize.example:
+#        class: PoweredByMoe\SocializeBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

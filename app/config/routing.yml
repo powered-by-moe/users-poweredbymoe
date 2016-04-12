@@ -1,3 +1,7 @@
+powered_by_moe_socialize:
+    resource: "@PoweredByMoeSocializeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 powered_by_moe_api:
     resource: "@PoweredByMoeApiBundle/Resources/config/routing.yml"
     prefix:   /api
