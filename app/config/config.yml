@@ -83,6 +83,8 @@ fos_rest:
         enabled: true
         rules:
             - { path: '^/admin', priorities: ['html', 'xhtml']}
+            - { path: '^/login', priorities: ['html', 'xhtml']}
+            - { path: '^/register', priorities: ['html', 'xhtml']}
             - { path: '^/', priorities: ['json', 'xml']}
     routing_loader:
         default_format: json
