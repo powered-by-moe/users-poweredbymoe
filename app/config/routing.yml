@@ -1,3 +1,7 @@
+pbx_g33k_music_info:
+    resource: "@PbxG33kMusicInfoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
 admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"

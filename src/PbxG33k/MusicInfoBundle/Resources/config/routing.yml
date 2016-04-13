@@ -1,0 +1,3 @@
+pbx_g33k_music_info_homepage:
+    path:     /
+    defaults: { _controller: PbxG33kMusicInfoBundle:Default:index }

@@ -1,0 +1,18 @@
+{
+    "name": "pbxg33k/music-info-bundle",
+    "description": "Symfony2 bundle that combines multiple music related API Services to enrich music metadata",
+    "type": "symfony-bundle",
+    "require": {
+        "jwilsson/spotify-web-api-php": "^1.3",
+        "echonest/echonest": "dev-master",
+        "ricbra/discogs-bundle": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oguzhan Uysal",
+            "email": "development@oguzhanuysal.eu"
+        }
+    ],
+    "minimum-stability": "dev"
+}
