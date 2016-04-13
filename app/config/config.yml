@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator: { fallbacks: [en] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -82,6 +82,10 @@ fos_rest:
     format_listener:
         enabled: true
         rules:
+            - { path: '^/admin', priorities: ['html', 'xhtml']}
+            - { path: '^/login', priorities: ['html', 'xhtml']}
+            - { path: '^/profile', priorities: ['html', 'xhtml']}
+            - { path: '^/register', priorities: ['html', 'xhtml']}
             - { path: '^/', priorities: ['json', 'xml']}
     routing_loader:
         default_format: json
@@ -91,6 +95,12 @@ fos_user:
     db_driver: orm
     firewall_name: api
     user_class: AppBundle\Entity\User
+    group:
+        group_class: AppBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+    service:
+        user_manager: sonata.user.orm.user_manager
+
 
 fos_oauth_server:
     db_driver: orm
@@ -129,3 +139,16 @@ al_swagger_ui:
         resource_dir: app/Resources/swagger-docs
         resource_list_filename:  api-docs.json
     resource_list: al_swagger_ui_static_resource_list
+
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
+        sonata.block.service.text:
+        sonata.block.service.rss:

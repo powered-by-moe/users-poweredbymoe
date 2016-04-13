@@ -25,6 +25,18 @@ class AppKernel extends Kernel
             new PoweredByMoe\ApiBundle\PoweredByMoeApiBundle(),
             new \FR3D\LdapBundle\FR3DLdapBundle(),
             new \ActiveLAMP\Bundle\SwaggerUIBundle\ALSwaggerUIBundle(),
+
+            // These are the other bundles the SonataAdminBundle relies on
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+
+            // And finally, the storage and SonataAdminBundle
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
