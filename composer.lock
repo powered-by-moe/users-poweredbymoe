@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa5be7cd2af857d1c810c694dba66a90",
-    "content-hash": "797ffa1ddfed3c5cca7272c312a9c669",
+    "hash": "7b82d15588511411039ed7f907545806",
+    "content-hash": "2a079a9412c80a913a6925f60905da67",
     "packages": [
         {
             "name": "activelamp/swagger-ui-bundle",
@@ -2368,64 +2368,6 @@
             "time": "2015-12-24 01:37:31"
         },
         {
-            "name": "mikealmond/musicbrainz",
-            "version": "v0.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mikealmond/MusicBrainz.git",
-                "reference": "c5a6fe502bf8d2be4e269543a3536b759f7a50d4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mikealmond/MusicBrainz/zipball/c5a6fe502bf8d2be4e269543a3536b759f7a50d4",
-                "reference": "c5a6fe502bf8d2be4e269543a3536b759f7a50d4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.8"
-            },
-            "require-dev": {
-                "guzzle/guzzle": "~3.8.0",
-                "phpunit/phpunit": "3.7.*"
-            },
-            "suggest": {
-                "guzzle/guzzle": "Allows you to use the GuzzleHttpAdapter. You must install one of the supported adapters.",
-                "rmccue/requests": "Allows you to use the RequestsHttpAdapter. You must install one of the supported adapters."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "MusicBrainz": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mike Almond",
-                    "email": "mike.almond@gmail.com",
-                    "homepage": "http://mikealmond.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A PHP library for accessing the MusicBrainz API",
-            "homepage": "https://github.com/mikealmond/musicbrainz",
-            "keywords": [
-                "api",
-                "library",
-                "musicbrainz",
-                "php"
-            ],
-            "time": "2015-09-17 16:46:51"
-        },
-        {
             "name": "monolog/monolog",
             "version": "1.19.0",
             "source": {
@@ -2746,6 +2688,65 @@
                 "random"
             ],
             "time": "2016-03-18 20:34:03"
+        },
+        {
+            "name": "pbxg33k/musicbrainz",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/powered-by-moe/MusicBrainz.git",
+                "reference": "3f117d4f6f7a53a10e687cbd17ad9e77cf4897be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/powered-by-moe/MusicBrainz/zipball/3f117d4f6f7a53a10e687cbd17ad9e77cf4897be",
+                "reference": "3f117d4f6f7a53a10e687cbd17ad9e77cf4897be",
+                "shasum": ""
+            },
+            "replace": {
+                "mikealmond/musicbrainz": "~0.2"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "~5.3",
+                "phpunit/phpunit": "^5.3"
+            },
+            "suggest": {
+                "guzzle/guzzle": "Allows you to use the GuzzleHttpAdapter. You must install one of the supported adapters.",
+                "rmccue/requests": "Allows you to use the RequestsHttpAdapter. You must install one of the supported adapters."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MusicBrainz": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Almond",
+                    "email": "mike.almond@gmail.com",
+                    "homepage": "http://mikealmond.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Oguzhan Uysal",
+                    "email": "development@oguzhanuysal.eu",
+                    "homepage": "https://g33k.code",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP library for accessing the MusicBrainz API",
+            "homepage": "https://github.com/powered-by-moe/musicbrainz",
+            "keywords": [
+                "api",
+                "library",
+                "musicbrainz",
+                "php"
+            ],
+            "time": "2016-04-16 11:50:35"
         },
         {
             "name": "pbxg33k/vocadb",
@@ -5774,7 +5775,8 @@
     "stability-flags": {
         "activelamp/swagger-ui-bundle": 20,
         "friendsofsymfony/message": 20,
-        "echonest/echonest": 20
+        "echonest/echonest": 20,
+        "pbxg33k/musicbrainz": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

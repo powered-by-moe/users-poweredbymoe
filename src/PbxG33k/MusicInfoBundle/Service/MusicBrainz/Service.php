@@ -1,9 +1,9 @@
 <?php
 namespace PbxG33k\MusicInfoBundle\Service\MusicBrainz;
 
+use MusicBrainz\HttpAdapters\GuzzleFiveAdapter;
 use PbxG33k\MusicInfoBundle\Service\BaseService;
 use PbxG33k\MusicInfoBundle\Service\Interfaces\IMusicService;
-use MusicBrainz\HttpAdapters\GuzzleHttpAdapter;
 use MusicBrainz\MusicBrainz;
 
 class Service extends BaseService implements IMusicService
@@ -25,7 +25,7 @@ class Service extends BaseService implements IMusicService
             $config = $this->getConfig();
         }
 
-        $apiClient = new MusicBrainz(new GuzzleHttpAdapter($this->getClient()));
+        $apiClient = new MusicBrainz(new GuzzleFiveAdapter($this->getClient()));
         $apiClient->setUserAgent(
             $config['application_name'],
             $config['application_version'],

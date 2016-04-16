@@ -30,21 +30,34 @@ class Service extends BaseService implements IMusicService
         return $this;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function artist()
     {
         return $this->getApiClient()->artist;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function album()
     {
         return $this->getApiClient()->album;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function song()
     {
         return $this->getApiClient()->song;
     }
 
+    /**
+     * Aliases song
+     * 
+     */
     public function track()
     {
         return $this->song();

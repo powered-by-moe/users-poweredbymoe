@@ -17,6 +17,7 @@ class MusicinfoSearchCommand extends ContainerAwareCommand
         $this
             ->setName('musicinfo:search')
             ->setDescription('...')
+            ->addArgument('name', InputArgument::REQUIRED, 'Search query')
 //            ->addArgument('argument', InputArgument::OPTIONAL, 'Argument description')
 //            ->addOption('option', null, InputOption::VALUE_NONE, 'Option description')
         ;
@@ -26,11 +27,12 @@ class MusicinfoSearchCommand extends ContainerAwareCommand
     {
         $this->musicInfoService = $this->getContainer()->get('pbxg33k.musicinfo');
 
+        $name = $input->getArgument('name');
 //        $this->musicInfoService->artist()->getByName('meh');
 
 //        $this->musicInfoService->getPreferredService();
         
-        dump($this->musicInfoService->getPreferredService()->artist()->getByName("Hardwell"));
+        dump($this->musicInfoService->getPreferredService()->artist()->getByName($name));
         $output->writeln('Command result.');
     }
 
