@@ -36,7 +36,21 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle('FOSUserBundle'),
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            new \Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+            new \Sonata\MediaBundle\SonataMediaBundle(),
+            new \Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Sonata\NewsBundle\SonataNewsBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            new \Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
+            new \Sonata\NotificationBundle\SonataNotificationBundle(),
+            new \Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

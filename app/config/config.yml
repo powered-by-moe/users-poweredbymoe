@@ -51,6 +51,8 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #     path:     "%database_path%"
+        types:
+            json:     Sonata\Doctrine\Types\JsonType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -90,6 +92,11 @@ fos_rest:
     routing_loader:
         default_format: json
         include_format: false
+    view:
+        view_response_listener: force
+    body_converter:
+        enabled: true
+        validate: true
 
 fos_user:
     db_driver: orm
@@ -141,6 +148,7 @@ al_swagger_ui:
     resource_list: al_swagger_ui_static_resource_list
 
 
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -152,3 +160,98 @@ sonata_block:
         sonata.user.block.account: # used to display menu option (login option)
         sonata.block.service.text:
         sonata.block.service.rss:
+
+sonata_media:
+    # if you don't use default namespace configuration
+    #class:
+    #    media: MyVendor\MediaBundle\Entity\Media
+    #    gallery: MyVendor\MediaBundle\Entity\Gallery
+    #    gallery_has_media: MyVendor\MediaBundle\Entity\GalleryHasMedia
+    default_context: default
+    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+
+    cdn:
+        server:
+            path: /uploads/media # http://media.sonata-project.org/
+
+    filesystem:
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     false
+
+    providers:
+        image:
+            resizer: sonata.media.resizer.square
+
+sonata_user:
+    class:
+        user: AppBundle\Entity\User
+        group: AppBundle\Entity\Group
+
+sonata_news:
+    title:        PoweredBy.MOE Portal
+    link:         http://portal.poweredby.moe
+    description:  Get Moe
+    salt:         'unsecureToken'
+    permalink_generator: sonata.news.permalink.date # sonata.news.permalink.category
+
+    comment:
+        notification:
+            emails:   [news.notifications@needsmore.moe]
+            from:     no-reply@needsmore.moe
+            template: 'SonataNewsBundle:Mail:comment_notification.txt.twig'
+
+sonata_formatter:
+    formatters:
+        markdown:
+            service: sonata.formatter.text.markdown
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        text:
+            service: sonata.formatter.text.text
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        rawhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        richhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+sonata_notification:
+    backend: sonata.notification.backend.runtime
+    # backend: sonata.notification.backend.rabbitmq
+    admin:
+        enabled: true
+
+sensio_framework_extra:
+    view:    { annotations: false }
+    router:  { annotations: true }
+    request: { converters: true }
+
+twig:
+    exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
