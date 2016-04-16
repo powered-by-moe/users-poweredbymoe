@@ -48,6 +48,8 @@ class AppKernel extends Kernel
             new Sonata\FormatterBundle\SonataFormatterBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new \Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
+            new \Sonata\NotificationBundle\SonataNotificationBundle(),
+            new \Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
 
         );
 

@@ -92,6 +92,11 @@ fos_rest:
     routing_loader:
         default_format: json
         include_format: false
+    view:
+        view_response_listener: force
+    body_converter:
+        enabled: true
+        validate: true
 
 fos_user:
     db_driver: orm
@@ -236,3 +241,17 @@ sonata_formatter:
                 - sonata.formatter.twig.control_flow
                 - sonata.formatter.twig.gist
                 - sonata.media.formatter.twig
+
+sonata_notification:
+    backend: sonata.notification.backend.runtime
+    # backend: sonata.notification.backend.rabbitmq
+    admin:
+        enabled: true
+
+sensio_framework_extra:
+    view:    { annotations: false }
+    router:  { annotations: true }
+    request: { converters: true }
+
+twig:
+    exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'

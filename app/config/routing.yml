@@ -28,6 +28,11 @@ NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
 
+sonata_api_notification:
+    type:         rest
+    prefix:       /api
+    resource:     "@SonataNotificationBundle/Resources/config/routing/api.xml"
+
 fos_oauth_server_token:
     resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
 
