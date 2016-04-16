@@ -15,6 +15,10 @@ media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
 
+news:
+    resource: '@SonataNewsBundle/Resources/config/routing/news.xml'
+    prefix: /news
+
 powered_by_moe_api:
     resource: "@PoweredByMoeApiBundle/Resources/config/routing.yml"
     prefix:   /api

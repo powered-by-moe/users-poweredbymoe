@@ -193,3 +193,46 @@ sonata_user:
     class:
         user: AppBundle\Entity\User
         group: AppBundle\Entity\Group
+
+sonata_news:
+    title:        PoweredBy.MOE Portal
+    link:         http://portal.poweredby.moe
+    description:  Get Moe
+    salt:         'unsecureToken'
+    permalink_generator: sonata.news.permalink.date # sonata.news.permalink.category
+
+    comment:
+        notification:
+            emails:   [news.notifications@needsmore.moe]
+            from:     no-reply@needsmore.moe
+            template: 'SonataNewsBundle:Mail:comment_notification.txt.twig'
+
+sonata_formatter:
+    formatters:
+        markdown:
+            service: sonata.formatter.text.markdown
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        text:
+            service: sonata.formatter.text.text
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        rawhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        richhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
