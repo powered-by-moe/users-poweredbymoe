@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8e4ae9e1330b63467d3dc04f74b761fe",
-    "content-hash": "8f61793fe9c9bbe0aec9bb0fb5b07bd5",
+    "hash": "d04c76d81d8ba4ca139dd2f922406cb6",
+    "content-hash": "13ee33c8bef736389e44c5547c948fea",
     "packages": [
         {
             "name": "activelamp/swagger-ui-bundle",
@@ -2832,6 +2832,69 @@
             "time": "2015-09-18 14:40:58"
         },
         {
+            "name": "sonata-project/classification-bundle",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataClassificationBundle.git",
+                "reference": "7f19f1ea34a6ab43262dcd462626ad060351174c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataClassificationBundle/zipball/7f19f1ea34a6ab43262dcd462626ad060351174c",
+                "reference": "7f19f1ea34a6ab43262dcd462626ad060351174c",
+                "shasum": ""
+            },
+            "require": {
+                "sonata-project/core-bundle": "~2.2",
+                "sonata-project/datagrid-bundle": "~2.2@dev",
+                "sonata-project/doctrine-orm-admin-bundle": "~2.2",
+                "symfony/symfony": "~2.2"
+            },
+            "require-dev": {
+                "friendsofsymfony/rest-bundle": "~1.1",
+                "jms/serializer-bundle": "~0.11",
+                "sonata-project/media-bundle": "~2.2"
+            },
+            "suggest": {
+                "sonata-project/media-bundle": "~2.2"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\ClassificationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataClassificationBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonataClassificationBundle",
+            "homepage": "http://sonata-project.org/bundles/classification",
+            "keywords": [
+                "category",
+                "tag",
+                "taxonomy"
+            ],
+            "time": "2014-09-11 13:57:44"
+        },
+        {
             "name": "sonata-project/core-bundle",
             "version": "2.3.10",
             "source": {
@@ -2899,6 +2962,63 @@
                 "sonata"
             ],
             "time": "2015-11-26 19:14:27"
+        },
+        {
+            "name": "sonata-project/datagrid-bundle",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataDatagridBundle.git",
+                "reference": "0749e710b936bf84736c648eee16bc45e2c04607"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataDatagridBundle/zipball/0749e710b936bf84736c648eee16bc45e2c04607",
+                "reference": "0749e710b936bf84736c648eee16bc45e2c04607",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/dependency-injection": "~2.3|~3.0",
+                "symfony/form": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.4",
+                "fabpot/php-cs-fixer": "~0.5|~1.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\DatagridBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataDatagridBundle/contributors"
+                },
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "https://sonata-project.org"
+                }
+            ],
+            "description": "Symfony SonataDatagridBundle",
+            "homepage": "https://sonata-project.org/bundles/datagrid",
+            "keywords": [
+                "datagrid",
+                "sonata"
+            ],
+            "time": "2015-12-16 08:53:13"
         },
         {
             "name": "sonata-project/doctrine-extensions",
