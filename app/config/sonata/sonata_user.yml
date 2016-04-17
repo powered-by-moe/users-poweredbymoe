@@ -1,4 +1,6 @@
 sonata_user:
+    security_acl: true
+    manager_type: orm
     class:
-        user: AppBundle\Entity\User
-        group: AppBundle\Entity\Group
+        user: Application\Sonata\UserBundle\Entity\User
+        group: Application\Sonata\UserBundle\Entity\Group

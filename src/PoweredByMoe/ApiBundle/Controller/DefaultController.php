@@ -3,7 +3,7 @@
 namespace PoweredByMoe\ApiBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
-use AppBundle\Entity\User;
+use Application\Sonata\UserBundle\Entity\User;
 
 class DefaultController extends FOSRestController
 {

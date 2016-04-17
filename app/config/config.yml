@@ -11,6 +11,7 @@ imports:
     - { resource: sonata/sonata_notification.yml }
     - { resource: sonata/sonata_page.yml }
     - { resource: sonata/sonata_seo.yml }
+    - { resource: sonata/sonata_admin.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -77,7 +78,7 @@ doctrine:
 
         # User your user entity instead of the PersonInterface
         resolve_target_entities:
-            FOS\Message\Model\PersonInterface: AppBundle\Entity\User
+            FOS\Message\Model\PersonInterface: Application\Sonata\UserBundle\Entity\User
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -110,9 +111,9 @@ fos_rest:
 fos_user:
     db_driver: orm
     firewall_name: api
-    user_class: AppBundle\Entity\User
+    user_class: Application\Sonata\UserBundle\Entity\User
     group:
-        group_class: AppBundle\Entity\Group
+        group_class: Application\Sonata\UserBundle\Entity\Group
         group_manager: sonata.user.orm.group_manager
     service:
         user_manager: sonata.user.orm.user_manager

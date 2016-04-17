@@ -2,11 +2,11 @@
 # http://symfony.com/doc/current/book/security.html
 security:
     erase_credentials: true
+    acl:
+        connection: default
 
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
-        AppBundle\Entity\LdapUser: plaintext
-
 
     role_hierarchy:
         ROLE_JANITOR:     [ROLE_USER]
@@ -22,10 +22,11 @@ security:
     providers:
         chain_provider:
             chain:
-                providers: [fos_userbundle, fr3d_ldapbundle]
+                providers: [fos_userbundle]
+#                providers: [fos_userbundle, fr3d_ldapbundle]
 
-        fr3d_ldapbundle:
-            id: fr3d_ldap.security.user.provider
+#        fr3d_ldapbundle:
+#            id: fr3d_ldap.security.user.provider
         fos_userbundle:
             id: fos_user.user_provider.username
 
@@ -79,6 +80,7 @@ security:
         - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
         # Secured part of the site
         # This config requires being logged for the whole site and having the admin role for the admin part.
