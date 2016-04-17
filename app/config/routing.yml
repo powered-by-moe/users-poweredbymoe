@@ -57,3 +57,12 @@ sonata_user_change_password:
 
 app:
     resource: "@AppBundle/Resources/config/routing/admin.yml"
+
+# app/config/routing.yml
+sonata_page_exceptions:
+    resource: '@SonataPageBundle/Resources/config/routing/exceptions.xml'
+    prefix: /
+
+sonata_page_cache:
+    resource: '@SonataPageBundle/Resources/config/routing/cache.xml'
+    prefix: /

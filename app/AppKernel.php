@@ -50,6 +50,11 @@ class AppKernel extends Kernel
             new \Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new \Sonata\NotificationBundle\SonataNotificationBundle(),
             new \Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
+            new \Sonata\SeoBundle\SonataSeoBundle(),
+
+            new \Sonata\PageBundle\SonataPageBundle(),
+            new \Sonata\CacheBundle\SonataCacheBundle(),
+            new \Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
 
         );
 
