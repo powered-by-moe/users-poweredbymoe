@@ -2,3 +2,14 @@ services:
 #    powered_by_moe_api.example:
 #        class: PoweredByMoe\ApiBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
+    powered_by_moe_api.admin.application:
+        class: PoweredByMoe\ApiBundle\Admin\ApplicationAdmin
+        arguments: [~, PoweredByMoe\ApiBundle\Entity\Application, PoweredByMoeApiBundle:ApplicationAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: OAuth, label: Application }
+
+    powered_by_moe_api.admin.client:
+        class: PoweredByMoe\ApiBundle\Admin\ClientAdmin
+        arguments: [~, PoweredByMoe\ApiBundle\Entity\Client, PoweredByMoeApiBundle:ClientAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: OAuth, label: Client }
