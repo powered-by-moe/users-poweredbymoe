@@ -1,0 +1,12 @@
+sonata_news:
+    title:        PoweredBy.MOE Portal
+    link:         http://portal.poweredby.moe
+    description:  Get Moe
+    salt:         'unsecureToken'
+    permalink_generator: sonata.news.permalink.date # sonata.news.permalink.category
+
+    comment:
+        notification:
+            emails:   [news.notifications@needsmore.moe]
+            from:     no-reply@needsmore.moe
+            template: 'SonataNewsBundle:Mail:comment_notification.txt.twig'
