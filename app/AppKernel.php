@@ -22,7 +22,6 @@ class AppKernel extends Kernel
             new \JMS\SerializerBundle\JMSSerializerBundle(),
             new \Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new PoweredByMoe\ApiBundle\PoweredByMoeApiBundle(),
-            new \FR3D\LdapBundle\FR3DLdapBundle(),
             new \ActiveLAMP\Bundle\SwaggerUIBundle\ALSwaggerUIBundle(),
 
             // These are the other bundles the SonataAdminBundle relies on

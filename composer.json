@@ -35,7 +35,6 @@
         "nelmio/api-doc-bundle": "^2.11",
         "friendsofsymfony/oauth-server-bundle": "^1.5",
         "activelamp/swagger-ui-bundle": "dev-master",
-        "fr3d/ldap-bundle": "^3.0",
         "friendsofsymfony/message": "dev-master",
         "sonata-project/admin-bundle": "^2.4",
         "sonata-project/doctrine-orm-admin-bundle": "^2.4",
@@ -47,7 +46,8 @@
         "sonata-project/notification-bundle": "^2.3",
         "sonata-project/seo-bundle": "^2.0",
         "videlalvaro/php-amqplib": "^2.6",
-        "sonata-project/page-bundle": "dev-master"
+        "sonata-project/page-bundle": "dev-master",
+        "ext-gd": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

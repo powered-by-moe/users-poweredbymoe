@@ -134,23 +134,6 @@ doctrine_migrations:
     table_name: migrations
     name: Application Migrations
 
-fr3d_ldap:
-    driver:
-        host:                     "%ldap_driver_host%"
-        port:                     "%ldap_driver_port%"
-        username:                 "%ldap_driver_username%"
-        password:                 "%ldap_driver_password%"
-        bindRequiresDn:           "%ldap_driver_bind_requires_dn%"
-        baseDn:                   "%ldap_driver_base_dn%"
-        accountDomainName:        "%ldap_driver_account_domain_name%"
-        accountDomainNameShort:   "%ldap_driver_account_domain_name_short%"
-    user:
-        baseDn: "%ldap_user_base_dn%"
-        filter: "%ldap_user_filter%"
-        usernameAttribute: "%ldap_user_username_attribute%"
-        attributes:
-            - { ldap_attr: samaccount, user_method: setUsername }
-
 al_swagger_ui:
     static_resources:
         resource_dir: app/Resources/swagger-docs
