@@ -9,6 +9,13 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ChatController extends FOSRestController
 {
+    /**
+     * Index action
+     *
+     * Returns conversations for authenticated user
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function indexAction()
     {
         $repository = $this->get('fos_message.repository');
@@ -18,7 +25,16 @@ class ChatController extends FOSRestController
         
         return $this->handleView($view);
     }
-    
+
+    /**
+     * Conversation action
+     *
+     * Returns conversation and messages for given conversation
+     *
+     * @param $id
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function conversationAction($id)
     {
         $repository = $this->get('fos_message.repository');
@@ -38,6 +54,15 @@ class ChatController extends FOSRestController
         return $this->handleView($view);
     }
 
+    /**
+     * New Conversation action
+     *
+     * Start new conversation between authenticated user (sender) and given userId (receiver)
+     *
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function newConversationAction(Request $request)
     {
         $sender = $this->get('fos_message.sender');
